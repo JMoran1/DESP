@@ -21,3 +21,11 @@ class MonthlyStatement(models.Model):
 
     def __str__(self):
         return self.clubID.clubName
+
+class UserAccount(models.Model):
+    userID = models.AutoField(primary_key=True)
+    userName = models.CharField(max_length=50)
+    password = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.userName

@@ -15,6 +15,8 @@ Club List
                 <th>Card Num</th>
                 <th>Exp Date</th>
                 <th>Discount</th>
+                <th></th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -25,6 +27,9 @@ Club List
                     <td> {{ club.cardNum }} </td>
                     <td> {{ club.expDate }} </td>
                     <td> {{ club.discountRate }} </td>
+                    <td><a href="{% url 'updateClub' club.clubID %}">Update</a></td>
+                    <td><a href="{% url 'deleteClub' club.clubID %}">Delete</a></td>
+
                 </tr>
             {% endfor %}
             </tbody>

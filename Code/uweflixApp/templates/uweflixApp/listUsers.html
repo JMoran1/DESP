@@ -1,0 +1,32 @@
+{% extends "uweflixApp/base.html" %}
+{% block title %}
+Club List
+{% endblock %}
+
+{% block content %}
+    <h2>Clubs</h2>
+
+    {% if user_list %}
+        <table class="message_list">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Password</th>
+                
+            </tr>
+            </thead>
+            <tbody>
+            {% for user in user_list %}
+                <tr>
+                    <td>{{ user.userID}}</td>
+                    <td> {{ user.userName }} </td>
+                    <td> {{ user.password }} </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No users have been made. Use the <a href="{% url 'CreateClub' %}">Create Club form</a>.</p>
+    {% endif %}
+{% endblock %}
