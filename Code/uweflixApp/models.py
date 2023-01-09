@@ -12,7 +12,7 @@ class Club(models.Model):
     def __str__(self):
         return self.clubName
 
-# Create a class for monthlyStatments with a Unique ID, clubID, date, amount
+
 class MonthlyStatement(models.Model):
     statementID = models.AutoField(primary_key=True)
     clubID = models.ForeignKey(Club, on_delete=models.CASCADE)
