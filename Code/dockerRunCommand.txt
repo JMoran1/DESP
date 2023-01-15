@@ -1,0 +1,4 @@
+docker build -t uweflixdjango .
+
+
+docker run -expose 8000:8000 uweflixdjango
